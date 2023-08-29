@@ -2,8 +2,22 @@
   text-align: center;
 }
 
-.board {
+.game-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin: 20px auto;
+  width: 420px;
+}
+
+.game-controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
   align-items: center;
 }
 
@@ -19,6 +33,10 @@
   justify-content: center;
 }
 
+.square-container {
+  position: relative;
+}
+
 .square {
   background: #ececec;
   border: 1px solid #7a7a7a;
@@ -26,10 +44,69 @@
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 140px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 140px;
+  font-size: larger;
+  position:relative
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square:hover {
+  background: #f5f5f5;
+}
+
+.square-text {
+  color: #7a7a7a;
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 140px;
+  height: 140px;
+  width: 140px;
+}
+
+.note-text {
+  position: absolute;
+  top: 0; 
+  left: 1px; 
+  font-size: 18px; 
+  font-weight: normal; 
+  line-height: 22px;
+}
+
+.play-button{
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border-radius: 18px;
+  width: 420px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.game-status {
+  font-size: 18;
+  font-weight: light;
+}
+
+.song-name {
+  line-height:0;
+  font-family: "Luminari";
+}
+.artist-name{
+  line-height: 5px;
+  font-family: "Luminari";
 }

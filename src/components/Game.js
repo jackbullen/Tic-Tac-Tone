@@ -21,13 +21,16 @@ export default function Game() {
   return (
     <div className='game'>
       <div className='game-board'>
-        <Board squares={squares} onPlay={handlePlay}/>
-        <div className='game-info'>
-          <button onClick={() => {setCurrentMove(0); setFirstPlayerTurn(true); setWinner(null);}}>New Game</button>
+        <p className='game-status'>{winner===null ? `Turn to play ${firstPlayerTurn ? "X" : "O"}` : `Winner: ${winner}`}</p>
+        <Board squares={squares} onPlay={handlePlay} gameOver={winner} />
+        <div className='game-controls-container'>
+          <div className='game-controls'>
+              <button className="button" onClick={() => {setCurrentMove(0); setFirstPlayerTurn(true); setWinner(null); setHistory([[Array(3).fill(null), Array(3).fill(null), Array(3).fill(null)]])}}>New Game</button>
+          </div>
         </div>
       </div>
-      <p>{winner===null ? `Turn to play ${firstPlayerTurn ? "X" : "O"}` : `Winner: ${winner}`}</p>
     </div>
+
   )
 }
 

@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function Square({value, onSquareClick}) {
+export default function Square({value, onSquareClick, note}) {
   return (
-    <button className='square' onClick={onSquareClick}>
-      {value}
-    </button>
+    <div className='square-container'>
+      <button className='square' onClick={onSquareClick}>
+        <span className="note-text">{note}</span>
+        <span className='square-text'>{value}</span>
+      </button>
+    </div>
   )
 }
